@@ -1,0 +1,6 @@
+node_modules/
+dist/
+web/json-to-types.js
+*.tsbuildinfo
+coverage/
+.DS_Store

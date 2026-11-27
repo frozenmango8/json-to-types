@@ -1,0 +1,58 @@
+{
+  "name": "json-to-types",
+  "version": "0.1.0",
+  "description": "Convert JSON samples into clean TypeScript types",
+  "keywords": [
+    "json",
+    "typescript",
+    "types",
+    "interface",
+    "cli",
+    "codegen",
+    "converter"
+  ],
+  "homepage": "https://frozenmango8.github.io/json-to-types/",
+  "bugs": {
+    "url": "https://github.com/frozenmango8/json-to-types/issues"
+  },
+  "license": "MIT",
+  "author": "frozenmango8",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frozenmango8/json-to-types.git"
+  },
+  "type": "module",
+  "bin": {
+    "json-to-types": "./dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/build-web.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "esbuild": "^0.25.12",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
